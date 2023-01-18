@@ -1,6 +1,6 @@
 # Setting Up React Project with Vite
 
-## Start project
+## Start Project
 
 https://vitejs.dev/guide/
 
@@ -8,7 +8,7 @@ https://vitejs.dev/guide/
 
 And clean the redundant stuff......
 
-## Set up eslint
+## Set Up ESlint
 
 - Install and init eslint
 
@@ -46,4 +46,35 @@ And clean the redundant stuff......
 
   ```
   "include": ["src", ".eslintrc.cjs"],
+  ```
+
+## Set Up Prettier
+
+- Install required packages
+
+  > yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier
+
+- Add configuration file
+
+  https://prettier.io/docs/en/configuration.html
+
+  .prettierrc.cjs
+
+  ```
+  // prettier.config.js or .prettierrc.js
+  module.exports = {
+    trailingComma: 'es5',
+    tabWidth: 2,
+    semi: true,
+    singleQuote: false,
+  }
+  ```
+
+- Configure the .eslintrc.cjs like
+
+  ```
+  {
+    "plugins": ["prettier"],
+    "extends": ["plugin:prettier/recommended"]
+  }
   ```
