@@ -78,3 +78,45 @@ And clean the redundant stuff......
     "extends": ["plugin:prettier/recommended"]
   }
   ```
+
+## Set Up Vitest
+
+https://vitest.dev/guide/
+
+- Install vitest
+
+  > yarn add --dev vitest
+
+- Configure vite.config.ts like
+
+  https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib-msw/vite.config.ts
+
+  ```
+  /// <reference types="vitest" />
+  /// <reference types="vite/client" />
+
+  import react from '@vitejs/plugin-react'
+  import { defineConfig } from 'vite'
+
+  // https://vitejs.dev/config/
+  export default defineConfig({
+    plugins: [react()],
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: ['./src/setup.ts'],
+    },
+  })
+  ```
+
+- Fix the Parsing error
+
+  Configure the tsconfig.json's include section like
+
+  ```
+  "include": [... , "vite.config.ts"],
+  ```
+
+- Ignore the eslint import/no-extraneous-dependencies rule for vite.config.ts
+
+  `/* eslint-disable import/no-extraneous-dependencies */`
