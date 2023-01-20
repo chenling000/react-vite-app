@@ -140,3 +140,13 @@ https://vitest.dev/guide/
 - Guidance for writing testing code
 
   https://testing-library.com/docs/queries/about
+
+## Set Up React-Router
+
+- Install react-router-dom
+
+  https://reactrouter.com/en/main/start/tutorial#setup
+
+  > react-router-dom localforage match-sorter sort-by
+
+- Wrap App with router component

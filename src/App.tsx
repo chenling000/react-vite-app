@@ -1,5 +1,20 @@
-function App() {
-  return <h1>Hello World</h1>;
-}
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 
-export default App;
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
+};
+
+const WrappedApp = () => {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+};
+
+export default WrappedApp;
