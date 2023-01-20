@@ -104,7 +104,7 @@ https://vitest.dev/guide/
     test: {
       globals: true,
       environment: 'jsdom',
-      setupFiles: ['./src/setup.ts'],
+      setupFiles: ['./src/setupTests.ts'],
     },
   })
   ```
@@ -120,3 +120,23 @@ https://vitest.dev/guide/
 - Ignore the eslint import/no-extraneous-dependencies rule for vite.config.ts
 
   `/* eslint-disable import/no-extraneous-dependencies */`
+
+- Install related testing libraries
+
+  > yarn add --dev @testing-library/react @testing-library/jest-dom
+
+- Add setupTests.ts
+
+  https://markus.oberlehner.net/blog/using-testing-library-jest-dom-with-vitest/
+
+  ```
+  /* eslint-disable import/no-extraneous-dependencies */
+  import matchers from '@testing-library/jest-dom/matchers';
+  import { expect } from 'vitest';
+
+  expect.extend(matchers);
+  ```
+
+- Guidance for writing testing code
+
+  https://testing-library.com/docs/queries/about
